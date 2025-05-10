@@ -1,0 +1,46 @@
+{
+  "theaters": [
+    {
+      "id": "1",
+      "name": "PVR Cinemas",
+      "location": {
+        "address": "123 Main Street",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400001"
+      },
+      "screens": [
+        {
+          "screenNumber": 1,
+          "totalSeats": 200
+        },
+        {
+          "screenNumber": 2,
+          "totalSeats": 150
+        }
+      ],
+      "amenities": ["3D", "Dolby Atmos", "Food Court", "Parking"]
+    },
+    {
+      "id": "2",
+      "name": "INOX Megaplex",
+      "location": {
+        "address": "456 Park Avenue",
+        "city": "Delhi",
+        "state": "Delhi",
+        "zipCode": "110001"
+      },
+      "screens": [
+        {
+          "screenNumber": 1,
+          "totalSeats": 250
+        },
+        {
+          "screenNumber": 2,
+          "totalSeats": 200
+        }
+      ],
+      "amenities": ["4DX", "IMAX", "Restaurant", "Valet Parking"]
+    }
+  ]
+} 
