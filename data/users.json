@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "2",
+      "name": "Ujjwal Patni",
+      "email": "orewa@goku.com",
+      "password": "aabb"
+    },
+    {
+      "id": "3",
+      "name": "GOKU",
+      "email": "uu@gmail.com",
+      "password": "xxx"
+    }
+  ]
+}

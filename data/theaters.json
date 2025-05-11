@@ -1,0 +1,47 @@
+{
+  "theaters": [
+    {
+      "id": "1",
+      "name": "Cineplex Downtown",
+      "location": "123 Main Street",
+      "city": "New York",
+      "screens": [
+        {
+          "id": "1",
+          "name": "Screen 1",
+          "capacity": 200,
+          "seats": {
+            "rows": 10,
+            "columns": 20
+          }
+        },
+        {
+          "id": "2",
+          "name": "Screen 2",
+          "capacity": 150,
+          "seats": {
+            "rows": 8,
+            "columns": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Metro Cinemas",
+      "location": "456 Park Avenue",
+      "city": "New York",
+      "screens": [
+        {
+          "id": "1",
+          "name": "Screen 1",
+          "capacity": 180,
+          "seats": {
+            "rows": 9,
+            "columns": 20
+          }
+        }
+      ]
+    }
+  ]
+} 

@@ -8,12 +8,14 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 // Data file paths
 const dataPath = path.join(__dirname, 'data');
 const moviesPath = path.join(dataPath, 'movies.json');
 const theatersPath = path.join(dataPath, 'theaters.json');
 const usersPath = path.join(dataPath, 'users.json');
+const bookingsPath = path.join(dataPath, 'bookings.json');
 
 // Helper function to read JSON files
 const readJsonFile = async (filePath) => {
@@ -37,7 +39,7 @@ const writeJsonFile = async (filePath, data) => {
   }
 };
 
-// Routes
+// Movies routes
 app.get('/api/movies', async (req, res) => {
   const data = await readJsonFile(moviesPath);
   res.json(data.movies);
@@ -53,6 +55,7 @@ app.get('/api/movies/:id', async (req, res) => {
   }
 });
 
+// Theaters routes
 app.get('/api/theaters', async (req, res) => {
   const data = await readJsonFile(theatersPath);
   res.json(data.theaters);
@@ -68,6 +71,7 @@ app.get('/api/theaters/:id', async (req, res) => {
   }
 });
 
+// User authentication routes
 app.post('/api/users/login', async (req, res) => {
   const { email, password } = req.body;
   const data = await readJsonFile(usersPath);
@@ -109,20 +113,50 @@ app.post('/api/users/register', async (req, res) => {
   });
 });
 
+// Booking routes
+
+// GET booked seats for a show
+app.get('/api/bookings', async (req, res) => {
+  const { movieId, theaterId, showtime } = req.query;
+  const data = await readJsonFile(bookingsPath);
+  const bookings = data.bookings.filter(
+    b => b.movieId === movieId && b.theaterId === theaterId && b.showtime === showtime && b.status === 'confirmed'
+  );
+  // Flatten all booked seats
+  const bookedSeats = bookings.flatMap(b => b.seats);
+  res.json({ bookedSeats });
+});
+
+// POST create a booking
 app.post('/api/bookings', async (req, res) => {
-  const { movieId, theaterId, showtime, seats, totalAmount } = req.body;
-  // In a real application, you would save the booking to a bookings.json file
-  res.status(201).json({
-    message: 'Booking successful',
-    booking: {
-      id: Date.now().toString(),
-      movieId,
-      theaterId,
-      showtime,
-      seats,
-      totalAmount
-    }
-  });
+  const { userId, movieId, theaterId, showtime, seats } = req.body;
+  const data = await readJsonFile(bookingsPath);
+  const newBooking = {
+    bookingId: Date.now().toString(),
+    userId,
+    movieId,
+    theaterId,
+    showtime,
+    seats,
+    status: 'confirmed'
+  };
+  data.bookings.push(newBooking);
+  await writeJsonFile(bookingsPath, data);
+  res.status(201).json({ booking: newBooking });
+});
+
+// DELETE cancel a booking
+app.delete('/api/bookings/:bookingId', async (req, res) => {
+  const { bookingId } = req.params;
+  const data = await readJsonFile(bookingsPath);
+  const booking = data.bookings.find(b => b.bookingId === bookingId);
+  if (booking) {
+    booking.status = 'cancelled';
+    await writeJsonFile(bookingsPath, data);
+    res.json({ message: 'Booking cancelled' });
+  } else {
+    res.status(404).json({ message: 'Booking not found' });
+  }
 });
 
 const PORT = process.env.PORT || 5000;
