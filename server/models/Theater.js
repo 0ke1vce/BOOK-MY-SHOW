@@ -31,7 +31,31 @@ const theaterSchema = new mongoose.Schema({
     totalSeats: {
       type: Number,
       required: true
-    }
+    },
+    seats: [{
+      row: {
+        type: Number,
+        required: true
+      },
+      column: {
+        type: Number,
+        required: true
+      },
+      status: {
+        type: String,
+        enum: ['available', 'booked', 'reserved'],
+        default: 'available'
+      },
+      bookedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        default: null
+      },
+      bookingTime: {
+        type: Date,
+        default: null
+      }
+    }]
   }],
   amenities: [{
     type: String
