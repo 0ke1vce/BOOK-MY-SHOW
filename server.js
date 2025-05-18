@@ -192,6 +192,26 @@ app.get('/api/bookings/user', async (req, res) => {
   res.json(enriched);
 });
 
+// PUT cancel a booking (JSON version)
+app.put('/api/bookings/:bookingId/cancel', async (req, res) => {
+  const { bookingId } = req.params;
+  const data = await readJsonFile(bookingsPath);
+  const booking = data.bookings.find(b => b.bookingId === bookingId);
+  if (!booking) {
+    return res.status(404).json({ message: 'Booking not found' });
+  }
+  // Check if booking can be cancelled (not too close to showtime)
+  const showtime = new Date(booking.showtime);
+  const now = new Date();
+  const hoursUntilShowtime = (showtime - now) / (1000 * 60 * 60);
+  if (hoursUntilShowtime < 2) {
+    return res.status(400).json({ message: 'Cannot cancel booking less than 2 hours before showtime' });
+  }
+  booking.status = 'cancelled';
+  await writeJsonFile(bookingsPath, data);
+  res.json({ message: 'Booking cancelled successfully', booking });
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

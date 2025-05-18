@@ -115,7 +115,7 @@
           "column": 7
         }
       ],
-      "status": "confirmed"
+      "status": "cancelled"
     },
     {
       "bookingId": "1747550457052",
@@ -131,6 +131,52 @@
         {
           "row": 3,
           "column": 3
+        }
+      ],
+      "status": "cancelled"
+    },
+    {
+      "bookingId": "1747551058290",
+      "userId": "6",
+      "movieId": "2",
+      "theaterId": "2",
+      "showtime": "2025-05-18T07:30:00.000Z",
+      "seats": [
+        {
+          "row": 0,
+          "column": 3
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "bookingId": "1747551545216",
+      "userId": "6",
+      "movieId": "3",
+      "theaterId": "1",
+      "showtime": "2025-05-18T10:30:00.000Z",
+      "seats": [
+        {
+          "row": 0,
+          "column": 5
+        },
+        {
+          "row": 3,
+          "column": 2
+        }
+      ],
+      "status": "cancelled"
+    },
+    {
+      "bookingId": "1747551717997",
+      "userId": "6",
+      "movieId": "5",
+      "theaterId": "1",
+      "showtime": "2025-05-18T07:30:00.000Z",
+      "seats": [
+        {
+          "row": 0,
+          "column": 6
         }
       ],
       "status": "confirmed"
