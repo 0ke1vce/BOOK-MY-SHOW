@@ -1,3 +1,139 @@
 {
-  "bookings": []
-} 
+  "bookings": [
+    {
+      "bookingId": "1747547561590",
+      "movieId": "1",
+      "theaterId": "2",
+      "showtime": "2025-05-18T04:30:00.000Z",
+      "seats": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 5
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "bookingId": "1747548388098",
+      "movieId": "1",
+      "theaterId": "2",
+      "showtime": "2025-05-18T07:30:00.000Z",
+      "seats": [
+        {
+          "row": 2,
+          "column": 4
+        },
+        {
+          "row": 3,
+          "column": 5
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "bookingId": "1747548653242",
+      "movieId": "1",
+      "theaterId": "2",
+      "showtime": "2025-05-18T07:30:00.000Z",
+      "seats": [
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 7
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "bookingId": "1747548904905",
+      "userId": "4",
+      "movieId": "1",
+      "theaterId": "2",
+      "showtime": "2025-05-18T10:30:00.000Z",
+      "seats": [
+        {
+          "row": 1,
+          "column": 7
+        },
+        {
+          "row": 2,
+          "column": 7
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "bookingId": "1747549726222",
+      "userId": "4",
+      "movieId": "3",
+      "theaterId": "1",
+      "showtime": "2025-05-18T07:30:00.000Z",
+      "seats": [
+        {
+          "row": 3,
+          "column": 7
+        },
+        {
+          "row": 4,
+          "column": 4
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "bookingId": "1747550432707",
+      "userId": "6",
+      "movieId": "2",
+      "theaterId": "1",
+      "showtime": "2025-05-18T13:30:00.000Z",
+      "seats": [
+        {
+          "row": 1,
+          "column": 6
+        },
+        {
+          "row": 5,
+          "column": 4
+        },
+        {
+          "row": 6,
+          "column": 7
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "bookingId": "1747550457052",
+      "userId": "6",
+      "movieId": "2",
+      "theaterId": "1",
+      "showtime": "2025-05-18T10:30:00.000Z",
+      "seats": [
+        {
+          "row": 2,
+          "column": 6
+        },
+        {
+          "row": 3,
+          "column": 3
+        }
+      ],
+      "status": "confirmed"
+    }
+  ]
+}

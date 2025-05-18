@@ -17,6 +17,24 @@
       "name": "GOKU",
       "email": "uu@gmail.com",
       "password": "xxx"
+    },
+    {
+      "id": "4",
+      "name": "Ujjwal Ujjwal Patni Patni",
+      "email": "patniujjwal265@gmail.com",
+      "password": "aa"
+    },
+    {
+      "id": "5",
+      "name": "GOku",
+      "email": "hueditors9@gmail.com",
+      "password": "orewagoku"
+    },
+    {
+      "id": "6",
+      "name": "oo dd",
+      "email": "hu@gmail.com",
+      "password": "asd"
     }
   ]
 }

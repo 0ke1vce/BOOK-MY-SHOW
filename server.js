@@ -113,6 +113,20 @@ app.post('/api/users/register', async (req, res) => {
   });
 });
 
+// GET user profile
+app.get('/api/users/profile', async (req, res) => {
+  const userId = req.query.userId;
+  if (!userId) {
+    return res.status(400).json({ message: 'Missing userId' });
+  }
+  const usersData = await readJsonFile(usersPath);
+  const user = usersData.users.find(u => u.id === userId);
+  if (!user) {
+    return res.status(404).json({ message: 'User not found' });
+  }
+  res.json({ id: user.id, name: user.name, email: user.email });
+});
+
 // Booking routes
 
 // GET booked seats for a show
@@ -157,6 +171,25 @@ app.delete('/api/bookings/:bookingId', async (req, res) => {
   } else {
     res.status(404).json({ message: 'Booking not found' });
   }
+});
+
+// GET bookings for a user
+app.get('/api/bookings/user', async (req, res) => {
+  const userId = req.query.userId;
+  if (!userId) {
+    return res.status(400).json({ message: 'Missing userId' });
+  }
+  const bookingsData = await readJsonFile(bookingsPath);
+  const moviesData = await readJsonFile(moviesPath);
+  const theatersData = await readJsonFile(theatersPath);
+  const userBookings = bookingsData.bookings.filter(b => b.userId === userId);
+  // Enrich with movie and theater info
+  const enriched = userBookings.map(b => ({
+    ...b,
+    movie: moviesData.movies.find(m => m.id === b.movieId) || {},
+    theaterName: (theatersData.theaters.find(t => t.id === b.theaterId) || {}).name || '',
+  }));
+  res.json(enriched);
 });
 
 const PORT = process.env.PORT || 5000;
