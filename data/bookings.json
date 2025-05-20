@@ -180,6 +180,20 @@
         }
       ],
       "status": "confirmed"
+    },
+    {
+      "bookingId": "1747593765473",
+      "userId": "6",
+      "movieId": "5",
+      "theaterId": "2",
+      "showtime": "2025-05-19T13:30:00.000Z",
+      "seats": [
+        {
+          "row": 6,
+          "column": 9
+        }
+      ],
+      "status": "cancelled"
     }
   ]
 }
