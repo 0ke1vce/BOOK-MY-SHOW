@@ -7,7 +7,7 @@
       "duration": 148,
       "genre": "Sci-Fi",
       "rating": 8.8,
-      "imageUrl": "/images/inception.jpeg",
+      "imageUrl": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=60",
       "language": "English"
     },
     {
@@ -17,7 +17,7 @@
       "duration": 152,
       "genre": "Action",
       "rating": 9.0,
-      "imageUrl": "/images/dark-knight.jpeg",
+      "imageUrl": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&auto=format&fit=crop&q=60",
       "language": "English"
     },
     {
@@ -27,7 +27,7 @@
       "duration": 142,
       "genre": "Drama",
       "rating": 9.3,
-      "imageUrl": "/images/shawshank.jpeg",
+      "imageUrl": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&auto=format&fit=crop&q=60",
       "language": "English"
     },
     {
@@ -37,7 +37,7 @@
       "duration": 154,
       "genre": "Crime",
       "rating": 8.9,
-      "imageUrl": "/images/pulp-fiction.jpeg",
+      "imageUrl": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&auto=format&fit=crop&q=60",
       "language": "English"
     },
     {
@@ -47,7 +47,7 @@
       "duration": 136,
       "genre": "Sci-Fi",
       "rating": 8.7,
-      "imageUrl": "/images/matrix.jpeg",
+      "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=60",
       "language": "English"
     }
   ]

@@ -35,6 +35,24 @@
       "name": "oo dd",
       "email": "hu@gmail.com",
       "password": "asd"
+    },
+    {
+      "id": "7",
+      "name": "hehe",
+      "email": "hehehe@gmail.com",
+      "password": "orewagoku"
+    },
+    {
+      "id": "8",
+      "name": "Khushi Ansari",
+      "email": "ujjwalpatni0987@gmail.com",
+      "password": "terimaakichut"
+    },
+    {
+      "id": "9",
+      "name": "Ujjwal Ujjwal Patni Patni",
+      "email": "tors9@gmail.com",
+      "password": "orewa"
     }
   ]
 }
